@@ -11,9 +11,8 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//
+
+
 //});
 //
 //Route::get('/about', function () {
@@ -45,4 +44,13 @@
 
 
 //goes to index function in controller
-Route::get('/post/{id}', 'PostsController@index');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::resource('posts', 'PostsController');
+
+Route::get('/contact', 'PostsController@contact');
+
+Route::get('post/{id}', 'PostsController@showPost');
